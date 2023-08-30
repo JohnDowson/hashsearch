@@ -60,7 +60,7 @@ fn spawn_workers(num_zeros: usize, workers: usize) -> Receiver<(usize, String)> 
                     hasher.finalize_into_reset(&mut hash);
 
                     // SAFETY:
-                    // GenericArray<T, S> wraps [T, S] and
+                    // GenericArray<T, S> wraps [T; S] and
                     // it is generally safe to transmute arrays of matching byte size
                     // Reasoning:
                     // after profiling with `perf` and `flamegraph`
